@@ -1,0 +1,88 @@
+<link rel='stylesheet' href='css/app.css'>
+{{#partial "content"}}
+    <h3 class="text-center"style="color:white;font-size: xx-large;font-weight: 600 opacity:0.1;">Record a new admin!</h3>
+    {{#if specificUser}}
+        <form action="/users/{{specificUser.id}}/admin/new" method="post" style="color:white;">
+            <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" name="userName" class="form-control" value="{{specificUser.name}}" disabled>
+            </div>
+    {{else}}
+        <form action="/admin/new" method="post">
+            <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" name="userName" class="form-control" required>
+            </div>
+    {{/if}}
+        <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+            <label for="moodname">Specific feeling</label>
+            {{#if sightings}}
+                <input type="text" id="moodname" name="moodname" class="form-control" list="prevAnimals" required>
+                <datalist id="prevMoods">
+                    {{#each admins}}
+                    <option value={{moodname}}>
+                    {{/each}}
+                </datalist>
+            {{else}}
+                <input type="text" id="moodname" name="moodname" class="form-control" required>
+            {{/if}}
+        </div>
+        <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+            <label for="moodtype">Mood Type</label>
+            <select name="moodtype" id="moodtype" class="form-control" required>
+                <option value="sad">Sad</option>
+                <option value="happy">Happy</option>
+            </select>
+        </div>
+        <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+            <label for="appname">App Name</label>
+            <select name="appname" id="appname" class="form-control" required>
+                <option value="Instagram">Instagram</option>
+                <option value="Twitter">Twitter</option>
+                <option value="Whatsapp">Whatsapp</option>
+            </select>
+        </div>
+        <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+            <label for="appinfo">App info</label>
+            <select name="appinfo" id="appinfo" class="form-control" required>
+                <option value="Video app">Video app</option>
+                <option value="To do app">To do app</option>
+                <option value="Reels app">Reels app</option>
+            </select>
+        </div>
+         <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+                    <label for="downloads">Downloads</label>
+                    <select name="downloads" id="downloads" class="form-control" required>
+                        <option value="Zero">Zero</option>
+                        <option value="Average">Average</option>
+                        <option value="Millions">Millions</option>
+                    </select>
+                </div>
+                <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+                                    <label for="rating">Raing</label>
+                                    <select name="rating" id="rating" class="form-control" required>
+                                        <option value="Boring">Boring</option>
+                                        <option value="Fun">Fun</option>
+                                        <option value="Average">Average</option>
+                                    </select>
+                                </div>
+        <div class="form-group" style="width:70vw; margin-left:80px; color:white;">
+            <label for="popularity">Popularity</label>
+            {{#if admins}}
+                <input type="text" id="popularity" name="popularity" class="form-control" list="prevLocations" required>
+                <datalist id="prevPopularities">
+                    {{#each admins}}
+                        <option value={{popularity}}>
+                    {{/each}}
+                </datalist>
+            {{else}}
+                <input type="text" id="popularity" name="popularity" class="form-control" required>
+            {{/if}}
+        </div>
+
+        <button type="submit" class="btn btn-outline-success">Submit</button>
+    </form>
+
+{{/partial}}
+
+{{> layout.hbs}}
