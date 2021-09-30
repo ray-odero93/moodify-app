@@ -37,28 +37,28 @@ public class App {
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get:endangered animals
+        //get:sad mood
         get("/mood/sad",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("sad", Sad.all());
             return new ModelAndView(model,"sad.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get: non-endangered animals
+        //get: happy mood
         get("/mood/happy",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("happy", Happy.all());
             return new ModelAndView(model,"happy.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get: new sighting form-view
+        //get: new admin input form-view
         get("/admin/new",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("admins", Admin.all());
             return new ModelAndView(model,"admin-form.hbs");
         },new HandlebarsTemplateEngine());
 
-        //Post: post sighting
+        //Post: post admin input
         post("/admin/new",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
           String userName = request.queryParams("userName").trim();
@@ -88,14 +88,14 @@ public class App {
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get: sightings per location view
+        //get: admin input per popularity view
         get("/admins",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("admins", Admin.all());
             return new ModelAndView(model,"admin-popularities.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get:sightings per location form
+        //get:admin input per popularity form
         get("/admins/:location/details",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String filter = request.params("location");
@@ -104,7 +104,7 @@ public class App {
             return new ModelAndView(model,"admin-popularity-details.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get: ranger sightings
+        //get: users admin input
         get("/users/:id/details",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(request.params("id"));
@@ -115,14 +115,14 @@ public class App {
             return new ModelAndView(model,"userlist.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get: all rangers
+        //get: all users
         get("/users",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("users", UserDao.all());
             return new ModelAndView(model,"userlist.hbs");
         },new HandlebarsTemplateEngine());
 
-        //get:sighting per ranger
+        //get:admin input per user
         get("/users/:id/admin/new",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(request.params("id"));
@@ -132,7 +132,7 @@ public class App {
             return new ModelAndView(model,"admin-form.hbs");
         },new HandlebarsTemplateEngine());
 
-        //post:sighting per ranger
+        //post:admin input per user
         post("/users/:id/admin/new",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(request.params("id"));
