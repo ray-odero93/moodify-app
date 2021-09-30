@@ -145,7 +145,7 @@ public class App {
             String popularity = request.queryParams("popularity").trim();
             String moodType = request.queryParams("moodtype").trim();
 
-            if(moodType.equalsIgnoreCase("Endangered")){
+            if(moodType.equalsIgnoreCase("sad")){
                 Sad sad = new Sad( appname,  appinfo,  downloads, rating);
                 sad.save();
                 Admin newAdmin = new Admin(sad.getAppname(),popularity, specificUser.getId());
