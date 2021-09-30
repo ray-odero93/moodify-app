@@ -1,13 +1,11 @@
 <link rel='stylesheet' href='css/app.css'>
 {{#partial "content"}}
+ <div>Feeling Sad?Apps to cheer you up!</div>
     {{#if sad}}
     {{#each sad}}
+
         <div class="card" style="width: 18rem; float:left; padding:2%; margin:2%;">
                             <img class="card-img-top" src="..." alt="Card image cap">
-{{!--                             <div class="card-body"> --}}
-{{!--                               <h5 class="card-title">App name</h5> --}}
-{{!--                               <p class="card-text">App Description</p> --}}
-{{!--                             </div> --}}
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">App Name:{{appname}}</li>
                     <li class="list-group-item">Details:{{appinfo}}</li>
