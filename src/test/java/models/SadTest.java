@@ -1,59 +1,59 @@
-//package models;
-//
-//import org.junit.Test;
-//
-//import static org.junit.Assert.*;
-//
-//public class SadTest {
-//
-//
-//    private Sad newMood() {
-//        return new Sad("Goat","Healthy","Young","bad");
-//    }
-//
-//    @Test
-//    public void animal_instantiatesCorrectly_true(){
-//        Sad sadAnimal = newMood();
-//        assertTrue(sadAnimal instanceof Sad);
-//    }
-//
-//    @Test
-//    public void getName_returnAnimalsName(){
-//        Sad sadAnimal = newMood();
-//        assertEquals("Goat", sadAnimal.getAppname());
-//    }
-//
-//    @Test
-//    public void getHealth_returnAnimalsHealth(){
-//        Sad sadAnimal = newMood();
-//        assertEquals("Healthy", sadAnimal.getAppinfo());
-//    }
-//
-//    @Test
-//    public void getAge_returnAnimalsAge(){
-//        Sad sadAnimal = newMood();
-//        assertEquals("Young", sadAnimal.getAge());
-//    }
-//
-//    @Test
-//    public void getStatus_returnAnimalsStatus(){
-//        Sad sadAnimal = newMood();
-//        assertEquals("Endangered", sadAnimal.getMoodtype());
-//    }
-//
-//    @Test
-//    public void save_savedToDb_int(){
-//        Sad sadAnimal = newMood();
-//        sadAnimal.save();
-//        assertEquals(sadAnimal.getId(), Sad.all().get(0).getId());
-//    }
-//
-//    @Test
-//    public void find_locateEndangeredAnimal_Name(){
-//        Sad sadAnimal = newMood();
-//        sadAnimal.save();
-//        Sad foundAnimal = Sad.find(sadAnimal.getId());
-//        assertEquals(sadAnimal,foundAnimal);
-//    }
-//
-//}
+package models;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+public class SadTest {
+
+
+    private Sad newMood() {
+        return new Sad("Spotify","Music app","Millions","Fun");
+    }
+
+    @Test
+    public void mood_instantiatesCorrectly_true(){
+        Sad sadMood = newMood();
+        assertTrue(sadMood instanceof Sad);
+    }
+
+    @Test
+    public void getName_returnMoodsName(){
+        Sad sadMood = newMood();
+        assertEquals("Happy", sadMood.getAppname());
+    }
+
+    @Test
+    public void getAppInfo_returnAnimalsHealth(){
+        Sad sadMood = newMood();
+        assertEquals("Great app", sadMood.getAppinfo());
+    }
+
+    @Test
+    public void getRating_returnAnimalsAge(){
+        Sad sadMood = newMood();
+        assertEquals("Fun", sadMood.getRating());
+    }
+
+    @Test
+    public void getStatus_returnMoodStatus(){
+        Sad sadMood = newMood();
+        assertEquals("sad", sadMood.getMoodtype());
+    }
+
+    @Test
+    public void save_savedToDb_int(){
+        Sad sadMood = newMood();
+        sadMood.save();
+        assertEquals(sadMood.getId(), Sad.all().get(0).getId());
+    }
+
+    @Test
+    public void find_popularityOfSadMood_Name(){
+        Sad sadMood = newMood();
+        sadMood.save();
+        Sad foundAnimal = Sad.find(sadMood.getId());
+        assertEquals(sadMood,foundAnimal);
+    }
+
+}
