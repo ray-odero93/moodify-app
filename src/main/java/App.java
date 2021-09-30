@@ -21,7 +21,7 @@ public class App {
         return 4567;
     }
 
-    public static <Bytea> void main(String[] args) {
+    public static  void main(String[] args) {
 
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
