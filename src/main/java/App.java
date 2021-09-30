@@ -56,6 +56,13 @@ public class App {
             return new ModelAndView(model,"bored.hbs");
         },new HandlebarsTemplateEngine());
 
+        //get: depressed mood
+        get("/mood/depressed",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("depressed", Depressed.all());
+            return new ModelAndView(model,"depressed.hbs");
+        },new HandlebarsTemplateEngine());
+
         //get: new admin input form-view
         get("/admin/new",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -88,6 +95,12 @@ public class App {
                 Bored bored = new Bored(  appname,  appinfo,  downloads, rating);
                 bored.save();
                 Admin newAdmin = new Admin(bored.getAppname(),popularity, newUser.getId());
+                newAdmin.save();
+            }
+            if(moodType.equalsIgnoreCase("depressed")){
+                Depressed depressed= new Depressed(  appname,  appinfo,  downloads, rating);
+                depressed.save();
+                Admin newAdmin = new Admin(depressed.getAppname(),popularity, newUser.getId());
                 newAdmin.save();
             }
             else{
@@ -166,6 +179,12 @@ public class App {
                 Bored bored = new Bored(  appname,  appinfo,  downloads, rating);
                 bored.save();
                 Admin newAdmin = new Admin(bored.getAppname(),popularity, specificUser.getId());
+                newAdmin.save();
+            }
+            if(moodType.equalsIgnoreCase("depressed")){
+                Depressed depressed= new Depressed(  appname,  appinfo,  downloads, rating);
+                depressed.save();
+                Admin newAdmin = new Admin(depressed.getAppname(),popularity, specificUser.getId());
                 newAdmin.save();
             }
             else{
