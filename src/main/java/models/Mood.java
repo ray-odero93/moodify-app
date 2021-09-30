@@ -4,15 +4,19 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-@SuppressWarnings("ALL")
+
 public abstract class Mood {
 
-    Sql2o sql2o = new Sql2o("jdbc:postgresql://ec2-44-198-223-154.compute-1.amazonaws.com:5432:5432/daa7t7lmet2sou?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory", "zmpkonnizwzucd", "c795ec211f480b77e7d471dbf87206d4dce5b428b0f59f062fb4da72c5bda9f3");
+
     public int id;
-    public byte appimage;
+    public File appimage;
     public String appname;
     public String appinfo;
     public String downloads;
@@ -44,6 +48,8 @@ public abstract class Mood {
     public int hashCode() {
         return Objects.hash(appimage,appname, appinfo, downloads, moodtype,rating);
     }
+
+
 
     public int getId() {
         return id;
@@ -116,4 +122,24 @@ public abstract class Mood {
         }
     }
 }
+//    String query = "INSERT INTO images(data) VALUES(?)";
+//
+//        try (Connection con = DriverManager.getConnection(url, user, password); PreparedStatement pst = con.prepareStatement(query)) {
+//
+//                File img = new File("java-logo.jpg");
+//
+//                try (FileInputStream fin = new FileInputStream(img)) {
+//
+//                pst.setBinaryStream(1, fin, (int) img.length());
+//                pst.executeUpdate();
+//                } catch (IOException ex) {
+//                Logger.getLogger(JavaPostgreSqlWriteImage.class.getName()).log(
+//        Level.SEVERE, ex.getMessage(), ex);
+//        }
+//
+//        } catch (SQLException ex) {
+//
+//        Logger lgr = Logger.getLogger(JavaPostgreSqlWriteImage.class.getName());
+//        lgr.log(Level.SEVERE, ex.getMessage(), ex);
+//        }
 

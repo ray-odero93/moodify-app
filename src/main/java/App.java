@@ -6,6 +6,7 @@ import models.User;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class App {
         return 4567;
     }
 
-    public static void main(String[] args) {
+    public static <Bytea> void main(String[] args) {
 
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
@@ -62,7 +63,7 @@ public class App {
         post("/admin/new",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
           String userName = request.queryParams("userName").trim();
-//            Byte appimage = request.queryParams("appimage");
+          //  File appimage = new File(request.queryParams("appimage"));
             String appname = request.queryParams("appname").trim();
             String appinfo = request.queryParams("appinfo").trim();
             String downloads = request.queryParams("downloads").trim();
@@ -137,7 +138,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             int id = Integer.parseInt(request.params("id"));
             User specificUser = UserDao.find(id);
-//            Byte appimage = request.queryParams("appimage");
+            File appimage = new File(request.queryParams("appimage"));
             String appname = request.queryParams("appname").trim();
             String appinfo = request.queryParams("appinfo").trim();
             String downloads = request.queryParams("downloads").trim();

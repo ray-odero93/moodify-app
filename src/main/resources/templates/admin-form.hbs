@@ -77,7 +77,7 @@
                     </select>
                 </div>
                 <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
-                                    <label for="rating">Raing</label>
+                                    <label for="rating">Rating</label>
                                     <select name="rating" id="rating" class="form-control" required>
                                         <option value="Boring">Boring</option>
                                         <option value="Fun">Fun</option>
@@ -97,6 +97,11 @@
                 <input type="text" id="popularity" name="popularity" class="form-control" required>
             {{/if}}
         </div>
+        <div class="form-group" style="width:40vw; margin-left:80px; color:black;">
+                <label for="appimage">Add image</label>
+               <input type="file" id="appimage" name="appimage" accept="image/*">
+         </div>
+
 
         <button type="submit" class="btn btn-outline-success">Submit</button>
     </form>
