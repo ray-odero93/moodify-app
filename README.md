@@ -13,6 +13,10 @@ This is  an application that recommends applications based on a users mood.
 
 #### By
 **Wendy Ondigo**
+**Raymond Odero**
+**Mary Muthoni**
+**Esther Moki**
+**Marvin Macharia**
 
 ## Technologies
 * Project is created with:
