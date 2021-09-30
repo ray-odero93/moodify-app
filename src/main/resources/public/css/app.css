@@ -1,11 +1,11 @@
 body{
     background-image:linear-gradient(rgba(0,0,0,5.6),rgba(0,5,0,0.6)),url(/images/bg.jpeg);
-    height: 250vh;
+    height: 3000vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     color: white;
-    font-size:15px;
+    font-size:17px;
 
 }
 
@@ -134,31 +134,3 @@ i.red {
     color: #black;
 }
 
-/* Controlling responsivity */
-
-@media screen and (max-width: 520px) {
-    .screen-body {
-        flex-direction: column;
-    }
-    .screen-body-item.left {
-        margin-bottom: 30px;
-    }
-    .left-title {
-        flex-direction: row;
-    }
-    .left-title span {
-        margin-right: 12px;
-    }
-    .left-title:after {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .screen-body {
-        padding: 40px;
-    }
-    .screen-body-item {
-        padding: 0;
-    }
-}
