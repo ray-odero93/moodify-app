@@ -1,8 +1,5 @@
 import dao.UserDao;
-import models.Admin;
-import models.Sad;
-import models.Happy;
-import models.User;
+import models.*;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -52,6 +49,13 @@ public class App {
             return new ModelAndView(model,"happy.hbs");
         },new HandlebarsTemplateEngine());
 
+        //get: bored mood
+        get("/mood/bored",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("bored", Bored.all());
+            return new ModelAndView(model,"bored.hbs");
+        },new HandlebarsTemplateEngine());
+
         //get: new admin input form-view
         get("/admin/new",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -78,6 +82,12 @@ public class App {
                 Sad sad = new Sad(  appname,  appinfo,  downloads, rating);
                 sad.save();
                 Admin newAdmin = new Admin(sad.getAppname(),popularity, newUser.getId());
+                newAdmin.save();
+            }
+            if(moodType.equalsIgnoreCase("bored")){
+                Bored bored = new Bored(  appname,  appinfo,  downloads, rating);
+                bored.save();
+                Admin newAdmin = new Admin(bored.getAppname(),popularity, newUser.getId());
                 newAdmin.save();
             }
             else{
@@ -150,6 +160,12 @@ public class App {
                 Sad sad = new Sad( appname,  appinfo,  downloads, rating);
                 sad.save();
                 Admin newAdmin = new Admin(sad.getAppname(),popularity, specificUser.getId());
+                newAdmin.save();
+            }
+            if(moodType.equalsIgnoreCase("bored")){
+                Bored bored = new Bored(  appname,  appinfo,  downloads, rating);
+                bored.save();
+                Admin newAdmin = new Admin(bored.getAppname(),popularity, specificUser.getId());
                 newAdmin.save();
             }
             else{

@@ -122,24 +122,4 @@ public abstract class Mood {
         }
     }
 }
-//    String query = "INSERT INTO images(data) VALUES(?)";
-//
-//        try (Connection con = DriverManager.getConnection(url, user, password); PreparedStatement pst = con.prepareStatement(query)) {
-//
-//                File img = new File("java-logo.jpg");
-//
-//                try (FileInputStream fin = new FileInputStream(img)) {
-//
-//                pst.setBinaryStream(1, fin, (int) img.length());
-//                pst.executeUpdate();
-//                } catch (IOException ex) {
-//                Logger.getLogger(JavaPostgreSqlWriteImage.class.getName()).log(
-//        Level.SEVERE, ex.getMessage(), ex);
-//        }
-//
-//        } catch (SQLException ex) {
-//
-//        Logger lgr = Logger.getLogger(JavaPostgreSqlWriteImage.class.getName());
-//        lgr.log(Level.SEVERE, ex.getMessage(), ex);
-//        }
 
