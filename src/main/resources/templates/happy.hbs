@@ -1,34 +1,11 @@
 <link rel='stylesheet' href='css/app.css'>
 {{#partial "content"}}
     {{#if happy}}
-{{!--         <table class="table text-center"> --}}
-{{!--             <h4 class="text-center"style="color: #fff;font-size: xx-large;font-weight: 600;">Animals in the safe zone(Not Endangered)</h4> --}}
-{{!--             <thead class="thead-dark"> --}}
-{{!--             <tr> --}}
-{{!--                 <th scope="col">Name</th> --}}
-{{!--                 <th scope="col">Health</th> --}}
-{{!--                 <th scope="col">Age</th> --}}
-{{!--             </tr> --}}
-{{!--             </thead> --}}
-{{!--             <tbody style="color:#fff;"> --}}
-{{!--             {{#each happy}} --}}
-{{!--                 <tr> --}}
-{{!--                     <td>{{name}}</td> --}}
-{{!--                     <td>{{health}}</td> --}}
-{{!--                     <td>{{age}}</td> --}}
-{{!--                 </tr> --}}
-{{!--             {{/each}} --}}
-{{!--             </tbody> --}}
-{{!--         </table> --}}
 <div>Feeling Happy?Share your joy with others!</div>
           {{#each happy}}
 
           <div class="card" style="width: 18rem; float:left; padding:2%; margin:2%;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-{{!--                     <div class="card-body"> --}}
-{{!--                       <h5 class="card-title">Card title</h5> --}}
-{{!--                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-{{!--                     </div> --}}
+          <img class="card-img-top" src="..." alt="Card image cap">
           <ul class="list-group list-group-flush">
                               <li class="list-group-item">App Name:{{appname}}</li>
                               <li class="list-group-item">Details:{{appinfo}}</li>
