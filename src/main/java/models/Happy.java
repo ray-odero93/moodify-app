@@ -2,13 +2,14 @@ package models;
 
 import org.sql2o.Connection;
 
+import java.io.File;
 import java.util.List;
 
 public class Happy extends Mood {
     private static final String STATUS = "happy";
 
-    public Happy(String appname, String appinfo, String downloads, String rating) {
-//        this.appimage = appimage;
+    public Happy( String appname, String appinfo, String downloads, String rating) {
+//       this.appimage = appimage;
         this.appname = appname;
         this.appinfo = appinfo;
         this.downloads = downloads;

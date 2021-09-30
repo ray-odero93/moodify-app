@@ -1,47 +1,30 @@
 <link rel='stylesheet' href='css/app.css'>
 {{#partial "content"}}
     {{#if happy}}
-{{!--         <table class="table text-center"> --}}
-{{!--             <h4 class="text-center"style="color: #fff;font-size: xx-large;font-weight: 600;">Animals in the safe zone(Not Endangered)</h4> --}}
-{{!--             <thead class="thead-dark"> --}}
-{{!--             <tr> --}}
-{{!--                 <th scope="col">Name</th> --}}
-{{!--                 <th scope="col">Health</th> --}}
-{{!--                 <th scope="col">Age</th> --}}
-{{!--             </tr> --}}
-{{!--             </thead> --}}
-{{!--             <tbody style="color:#fff;"> --}}
-{{!--             {{#each happy}} --}}
-{{!--                 <tr> --}}
-{{!--                     <td>{{name}}</td> --}}
-{{!--                     <td>{{health}}</td> --}}
-{{!--                     <td>{{age}}</td> --}}
-{{!--                 </tr> --}}
-{{!--             {{/each}} --}}
-{{!--             </tbody> --}}
-{{!--         </table> --}}
-
+<div>Feeling Happy?Share your joy with others!</div>
           {{#each happy}}
+
           <div class="card" style="width: 18rem; float:left; padding:2%; margin:2%;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">{{name}}</li>
-            <li class="list-group-item">{{health}}</li>
-            <li class="list-group-item">{{age}}</li>
-          </ul>
+                               <li class="list-group-item"><img class="card-img-top" src="/images/newbg.jpg" alt="Card image cap"></li>
+                              <li class="list-group-item">App Name:{{appname}}</li>
+                              <li class="list-group-item">Details:{{appinfo}}</li>
+                              <li class="list-group-item">Downloads:{{downloads}}</li>
+                              <li class="list-group-item">Rating:{{rating}}</li>
+                              <li class="list-group-item">Popularity:{{popularity}}</li>
+
+
+                            </ul>
            <div class="card-body">
-                      <a href="#" class="card-link">Card link</a>
-                      <a href="#" class="card-link">Another link</a>
+                      <a href="#" class="card-link">Download link</a>
+                      <br>
+                      <a href="#" class="card-link">Official Website link</a>
                     </div>
                   </div>
           {{/each}}
 
     {{else}}
-        <h5 class="text-center">No animals sighted .</h5>
+        <h5 class="text-center">No data to display .</h5>
     {{/if}}
 
 {{/partial}}

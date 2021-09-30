@@ -1,26 +1,29 @@
 <link rel='stylesheet' href='css/app.css'>
 {{#partial "content"}}
+ <div>Feeling Sad?Apps to cheer you up!</div>
     {{#if sad}}
     {{#each sad}}
+
         <div class="card" style="width: 18rem; float:left; padding:2%; margin:2%;">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <div class="card-body">
-                              <h5 class="card-title">App name</h5>
-                              <p class="card-text">App Description</p>
-                            </div>
+
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">{{name}}</li>
-                    <li class="list-group-item">{{health}}</li>
-                    <li class="list-group-item">{{age}}</li>
+                    <li class="list-group-item"><img class="card-img-top" src="/images/apps.jpeg" alt="Card image cap"></li>
+                    <li class="list-group-item">App Name:{{appname}}</li>
+                    <li class="list-group-item">Details:{{appinfo}}</li>
+                    <li class="list-group-item">Downloads:{{downloads}}</li>
+                    <li class="list-group-item">Rating:{{rating}}</li>
+                    <li class="list-group-item">Popularity:{{popularity}}</li>
+
                   </ul>
                    <div class="card-body">
-                              <a href="#" class="card-link">Card link</a>
-                              <a href="#" class="card-link">Another link</a>
+                              <a href="#" class="card-link">Download link</a>
+                              <br>
+                              <a href="#" class="card-link">Official Website</a>
                             </div>
                           </div>
                            {{/each}}
     {{else}}
-        <h5 class="text-center">No animals sighted yet. Report a admin to have it appear here</h5>
+        <h5 class="text-center">No data to display</h5>
     {{/if}}
 
 {{/partial}}

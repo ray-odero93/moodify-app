@@ -2,17 +2,12 @@ package models;
 
 import org.sql2o.Connection;
 
+import java.io.File;
 import java.util.List;
 
 public class Sad extends Mood {
     private static final String STATUS = "sad";
 
-//    public Sad(String name, String health, String age) {
-//        this.appname = name;
-//        this.appinfo = health;
-//        this.age = age;
-//        this.moodtype = STATUS;
-//    }
 
     public Sad( String appname, String appinfo, String downloads, String rating) {
 //        this.appimage = appimage;
@@ -23,9 +18,6 @@ public class Sad extends Mood {
         this.rating = rating;
     }
 
-//    public Sad(String moodAppname, String moodAppinfo, String moodDownloads, String moodRating) {
-//        super();
-//    }
 
     //DAO OPERATIONS
 
@@ -47,5 +39,6 @@ public class Sad extends Mood {
                     .executeAndFetchFirst(Sad.class);
         }
     }
+
 
 }
